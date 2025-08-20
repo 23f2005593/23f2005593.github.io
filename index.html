@@ -1,127 +1,186 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q2 Earnings — Interactive RevealJS Deck</title>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+  <style>
+    .reveal .footer {
+      position: absolute; left: 0; right: 0; bottom: 12px;
+      display: flex; justify-content: center; font-size: 14px; opacity: .6;
+    }
+    .reveal .brand-badge {
+      position: absolute; right: 24px; top: 24px; font-size: 12px; opacity: .7;
+      padding: 6px 10px; border-radius: 10px; background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .kpi { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px; }
+    .kpi .card { padding: 16px; border-radius: 14px; background: rgba(255,255,255,.06); backdrop-filter: blur(6px); }
+    .muted { opacity: .8; font-size: .9em; }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
 
-		<title>Quarterly Earnings Report - Q3 2025</title>
+    <!-- Title -->
+    <section>
+      <div class="brand-badge">RevealJS • GitHub Pages Ready</div>
+      <h2>Quarterly Earnings Report</h2>
+      <p class="muted">Interactive stakeholder presentation</p>
+      <p style="margin-top: 24px;">
+        <small>Prepared by: <strong>Vishal</strong> — Technical Consultant<br/>
+        Contact: <a href="mailto:23f2005593@ds.study.iitm.ac.in">23f2005593@ds.study.iitm.ac.in</a></small>
+      </p>
+      <aside class="notes">
+        Welcome slide. Pause for greetings, confirm everyone can see the deck.
+        Mention that the slides are keyboard-navigable (←/→, space) and support speaker notes.
+      </aside>
+      <div class="footer">Use S to open speaker notes • Press ? for shortcuts</div>
+    </section>
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css" id="theme">
+    <!-- Markdown slide (require markdown plugin) -->
+    <section data-markdown>
+      <textarea data-template>
+# Agenda (Markdown Slide)
+- Company performance at a glance
+- Revenue & margin trends
+- Guidance and risk overview
+- Outlook & Q&A
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/zenburn.min.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h3>Quarterly Earnings Report</h3>
-					<h1>Q3 2025 Financial Performance</h1>
-					<p>
-						<small>Presented by: Technical Consultant</small>
-					</p>
-                    <p>23f2005593@ds.study.iitm.ac.in</p>
-					<aside class="notes">
-						Welcome everyone to the Q3 2025 earnings call. Today, we will discuss our financial performance, key growth drivers, and our outlook for the next quarter.
-					</aside>
-				</section>
+*Tip:* This slide is written in **Markdown** and rendered live via the RevealJS Markdown plugin.
+<!-- .slide: data-background-transition="zoom" -->
+      </textarea>
+      <aside class="notes">
+        Point out that we can maintain slides in Markdown for faster iteration and versioning in Git.
+      </aside>
+    </section>
 
-				<section>
-					<h2>Agenda</h2>
-					<ul>
-						<li class="fragment">Financial Highlights</li>
-						<li class="fragment">Business Unit Performance</li>
-						<li class="fragment">Strategic Initiatives Update</li>
-						<li class="fragment">Financial Projections & Outlook</li>
-						<li class="fragment">Q&A Session</li>
-					</ul>
-					<aside class="notes">
-						Here is the agenda for today's presentation. We'll start with a high-level overview of the financials and then dive deeper into each business unit's performance. Please hold your questions until the end.
-					</aside>
-				</section>
+    <!-- KPIs with fragments -->
+    <section>
+      <h3>Highlights</h3>
+      <div class="kpi">
+        <div class="card fragment fade-up">
+          <h4>Revenue</h4>
+          <p><strong>$3.72B</strong></p>
+          <p class="muted">+8.4% YoY</p>
+        </div>
+        <div class="card fragment fade-up">
+          <h4>Operating Margin</h4>
+          <p><strong>22.1%</strong></p>
+          <p class="muted">+90 bps YoY</p>
+        </div>
+        <div class="card fragment fade-up">
+          <h4>EPS (Diluted)</h4>
+          <p><strong>$1.34</strong></p>
+          <p class="muted">+12% YoY</p>
+        </div>
+      </div>
+      <aside class="notes">
+        Reveal the KPIs one-by-one using fragments to control pacing.
+      </aside>
+    </section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Key Metrics 📈
+    <!-- Code samples with syntax highlighting -->
+    <section>
+      <h3>Reproducible Metrics (Sample Code)</h3>
+      <pre><code class="language-python">
+import math
 
-						| Metric              | Q3 2025    | Q3 2024    | YoY Growth |
-						|---------------------|------------|------------|------------|
-						| **Revenue** | $150M      | $125M      | +20%       |
-						| **Net Profit** | $30M       | $22M       | +36%       |
-						| **EPS** | $1.20      | $0.95      | +26%       |
+def npv(rate, cashflows):
+    return sum(cf / ((1 + rate) ** t) for t, cf in enumerate(cashflows))
 
-						*Note: All figures are preliminary and subject to audit.*
-					</script>
-					<aside class="notes">
-						As you can see, we've had a strong quarter with double-digit growth across all key metrics. The 20% year-over-year revenue growth is particularly noteworthy.
-					</aside>
-				</section>
+def irr(cashflows, guess=0.1):
+    # Newton-Raphson
+    r = guess
+    for _ in range(100):
+        f = sum(cf / (1 + r) ** t for t, cf in enumerate(cashflows))
+        df = sum(-t * cf / (1 + r) ** (t + 1) for t, cf in enumerate(cashflows))
+        if abs(df) &lt; 1e-12:
+            break
+        r_next = r - f / df
+        if abs(r_next - r) &lt; 1e-10:
+            return r_next
+        r = r_next
+    return r
 
-				<section>
-					<h2>CAGR Calculation Model</h2>
-					<p>We use a standardized Python model for our growth calculations.</p>
-					<pre><code data-trim data-noescape class="python">
-						def calculate_cagr(beginning_value, ending_value, num_years):
-						  """
-						  Calculates the Compound Annual Growth Rate (CAGR).
-						  """
-						  if beginning_value == 0 or num_years <= 0:
-							return 0
-						  
-						  cagr = (ending_value / beginning_value) ** (1 / num_years) - 1
-						  return f"{cagr:.2%}"
+cashflows = [-1000, 300, 350, 420, 520]
+print("NPV @ 10%:", round(npv(0.10, cashflows), 2))
+print("IRR:", round(irr(cashflows)*100, 2), "%")
+      </code></pre>
+      <aside class="notes">
+        Highlight our internal reproducibility tooling. Syntax highlighting is handled by the highlight.js plugin.
+      </aside>
+    </section>
 
-						# Example: Growth from $100M to $150M in 3 years
-						print(calculate_cagr(100, 150, 3))
-						# Expected Output: 14.47%
-					</code></pre>
-					<aside class="notes">
-						To ensure consistency in our reporting, all growth rates are calculated using this Python function. It provides a clear, repeatable method for determining compound annual growth.
-					</aside>
-				</section>
+    <!-- Math (financial formulas) -->
+    <section>
+      <h3>Key Financial Formulae</h3>
+      <p class="fragment">Net Present Value (NPV): $$\text{NPV} = \sum_{t=0}^{T} \frac{CF_t}{(1+r)^t}$$</p>
+      <p class="fragment">Earnings Per Share (EPS): $$\text{EPS} = \frac{\text{Net Income} - \text{Dividends on Pref.}}{\text{Weighted Avg. Shares}}$$</p>
+      <p class="fragment">Compound Annual Growth Rate (CAGR): $$\text{CAGR} = \left(\frac{V_{\text{final}}}{V_{\text{initial}}}\right)^{\tfrac{1}{n}} - 1$$</p>
+      <aside class="notes">
+        Use fragments so each equation appears on cue. Math is rendered with KaTeX via Reveal's math plugin.
+      </aside>
+    </section>
 
-				<section>
-					<h2>Financial Formulas</h2>
-					<p>Our projections are based on standard financial models, including the Compound Annual Growth Rate (CAGR).</p>
-					<p>The formula for CAGR is:</p>
-					$$
-					CAGR = \left( \frac{EV}{BV} \right)^{\frac{1}{n}} - 1
-					$$
-					<p>Where:</p>
-					<ul>
-						<li>$EV$ = Ending Value</li>
-						<li>$BV$ = Beginning Value</li>
-						<li>$n$ = Number of Years</li>
-					</ul>
-					<aside class="notes">
-						This is the mathematical representation of the code we just saw. It's a fundamental formula for measuring an investment's annual growth rate over a specified time period.
-					</aside>
-				</section>
+    <!-- Guidance with staged reveal -->
+    <section data-auto-animate>
+      <h3>Guidance</h3>
+      <ul>
+        <li class="fragment">FY Revenue growth: <strong>7–9%</strong></li>
+        <li class="fragment">Operating margin: <strong>~22%</strong></li>
+        <li class="fragment">Capital allocation: <strong>Balanced buybacks + strategic capex</strong></li>
+      </ul>
+      <aside class="notes">
+        Keep the ranges conservative; reiterate uncertainty bands.
+      </aside>
+    </section>
 
-				<section>
-					<h2>Thank You</h2>
-					<h3>Q&A Session</h3>
-				</section>
+    <!-- Contact -->
+    <section>
+      <h3>Contact &amp; Follow-ups</h3>
+      <p>Questions? Ping me at <a href="mailto:23f2005593@ds.study.iitm.ac.in">23f2005593@ds.study.iitm.ac.in</a></p>
+      <p class="muted">Slides: Hosted on GitHub Pages</p>
+      <aside class="notes">
+        Invite Q&amp;A. Confirm next steps and data room access.
+      </aside>
+    </section>
 
-			</div>
-		</div>
+  </div>
+</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/math/math.min.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+<script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+<script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+<!-- KaTeX for math rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
-			});
-		</script>
-	</body>
+<script>
+  // Initialize Reveal
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'fade',
+    backgroundTransition: 'convex',
+    plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
+    // Math options
+    math: {
+      // KaTeX is loaded above; this enables it in Reveal
+      // Optional delimiters are defaults; included here for clarity
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ]
+    }
+  });
+</script>
+</body>
 </html>
