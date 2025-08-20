@@ -1,63 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TDS Project Showcase</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        .container {
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9em;
-            color: #7f8c8d;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Tools in Data Science Project Showcase</h1>
-    
-    <div class="container">
-        <h2>About This Project</h2>
-        <p>This project demonstrates various data science tools and techniques implemented as a web service.
-        The service can handle tasks such as:</p>
-        <ul>
-            <li>Image compression</li>
-            <li>File processing and analysis</li>
-            <li>Data transformation and extraction</li>
-            <li>GitHub repository management</li>
-            <li>Mathematical calculations</li>
-        </ul>
-    </div>
-    
-    <div class="container">
-        <h2>Contact Information</h2>
-        <p>For more information about this project, please contact:</p>
-        <p><!--email_off-->23f2005593@ds.study.iitm.ac.in<!--/email_off--></p>
-    </div>
-    
-    <div class="footer">
-        <p>Created for Tools in Data Science course - 2025</p>
-    </div>
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Quarterly Earnings Report - Q3 2025</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css" id="theme">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/zenburn.min.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Quarterly Earnings Report</h3>
+					<h1>Q3 2025 Financial Performance</h1>
+					<p>
+						<small>Presented by: Technical Consultant</small>
+					</p>
+                    <p>
+                        <small>Contact: <a href="mailto:23f2005593@ds.study.iitm.ac.in">23f2005593@ds.study.iitm.ac.in</a></small>
+                    </p>
+					<aside class="notes">
+						Welcome everyone to the Q3 2025 earnings call. Today, we will discuss our financial performance, key growth drivers, and our outlook for the next quarter.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li class="fragment">Financial Highlights</li>
+						<li class="fragment">Business Unit Performance</li>
+						<li class="fragment">Strategic Initiatives Update</li>
+						<li class="fragment">Financial Projections & Outlook</li>
+						<li class="fragment">Q&A Session</li>
+					</ul>
+					<aside class="notes">
+						Here is the agenda for today's presentation. We'll start with a high-level overview of the financials and then dive deeper into each business unit's performance. Please hold your questions until the end.
+					</aside>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						## Key Metrics 📈
+
+						| Metric              | Q3 2025    | Q3 2024    | YoY Growth |
+						|---------------------|------------|------------|------------|
+						| **Revenue** | $150M      | $125M      | +20%       |
+						| **Net Profit** | $30M       | $22M       | +36%       |
+						| **EPS** | $1.20      | $0.95      | +26%       |
+
+						*Note: All figures are preliminary and subject to audit.*
+					</script>
+					<aside class="notes">
+						As you can see, we've had a strong quarter with double-digit growth across all key metrics. The 20% year-over-year revenue growth is particularly noteworthy.
+					</aside>
+				</section>
+
+				<section>
+					<h2>CAGR Calculation Model</h2>
+					<p>We use a standardized Python model for our growth calculations.</p>
+					<pre><code data-trim data-noescape class="python">
+						def calculate_cagr(beginning_value, ending_value, num_years):
+						  """
+						  Calculates the Compound Annual Growth Rate (CAGR).
+						  """
+						  if beginning_value == 0 or num_years <= 0:
+							return 0
+						  
+						  cagr = (ending_value / beginning_value) ** (1 / num_years) - 1
+						  return f"{cagr:.2%}"
+
+						# Example: Growth from $100M to $150M in 3 years
+						print(calculate_cagr(100, 150, 3))
+						# Expected Output: 14.47%
+					</code></pre>
+					<aside class="notes">
+						To ensure consistency in our reporting, all growth rates are calculated using this Python function. It provides a clear, repeatable method for determining compound annual growth.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Financial Formulas</h2>
+					<p>Our projections are based on standard financial models, including the Compound Annual Growth Rate (CAGR).</p>
+					<p>The formula for CAGR is:</p>
+					$$
+					CAGR = \left( \frac{EV}{BV} \right)^{\frac{1}{n}} - 1
+					$$
+					<p>Where:</p>
+					<ul>
+						<li>$EV$ = Ending Value</li>
+						<li>$BV$ = Beginning Value</li>
+						<li>$n$ = Number of Years</li>
+					</ul>
+					<aside class="notes">
+						This is the mathematical representation of the code we just saw. It's a fundamental formula for measuring an investment's annual growth rate over a specified time period.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thank You</h2>
+					<h3>Q&A Session</h3>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/math/math.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
 </html>
